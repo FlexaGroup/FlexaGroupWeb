@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status - Flexa Group</title>
+    <meta
+      name="description"
+      content="Flexa Group | The all in one bot that empowers communities" />
+    <meta name="author" content="Flexa Group" />
+    <meta property="og:image" content="./images/Flexa_Logo.png" />
+    <link rel="icon" type="image/x-icon" href="./images/Flexa_Logo.png" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/realm-web@latest/dist/bundle.iife.js"></script>
+    <style>
+      .cluster-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 20px;
+        margin: 20px auto;
+        max-width: 480px; /* Adjust as needed */
+      }
+      .cluster-grid-item {
+        background-color: #2d3e4d;
+        color: white;
+        height: 50px; /* Adjust height as needed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #01e6ce;
+        font-size: 24px;
+        border-radius: 5px; /* Add border-radius for rounded corners */
+        position: relative;
+        cursor: pointer;
+      }
+      .cluster-popup {
+        display: none;
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: darkgray;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+        z-index: 999;
+      }
+
+      :root {
+        --cluster-color-operational: #01e6ce; /* Default color for light mode */
+        --cluster-color-partialoutage: #ff9b00; /* Default color for dark mode */
+        --cluster-color-majoroutage: #ff414b; /* Default color for dark mode */
+        --cluster-color-offlinedark: #848482; /* Default color for dark mode */
+        --cluster-color-offlinelight: #000000; /* Default color for dark mode */
+      }
+
+      .cluster-grid-item[data-cluster="0"] {
+        color: #000000; /* Change color for cluster 1 */
+      }
+      .cluster-grid-item[data-cluster="1"] {
+        color: #000000; /* Change color for cluster 1 */
+      }
+      .cluster-grid-item[data-cluster="2"] {
+        color: #000000; /* Change color for cluster 1 */
+      }
+      .cluster-grid-item[data-cluster="3"] {
+        color: #000000; /* Change color for cluster 1 */
+      }
+      .cluster-grid-item[data-cluster="4"] {
+        color: #000000; /* Change color for cluster 1 */
+      }
+      .cluster-grid-item[data-cluster="5"] {
+        color: #000000; /* Change color for cluster 1 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex items-center justify-between gap-4 px-5 mt-4">
+      <a href="home.html">
+        <div class="flex items-center gap-4">
+          <img
+            src="./images/Flexa_Logo.png"
+            alt="Flexa Group Logo"
+            class="h-10" />
+          <p class="text-lg">Flexa Group</p>
+        </div>
+      </a>
+      <style>
+        @keyframes flash {
+          0% {
+            color: gray;
+          }
+          50% {
+            color: #ff414b;
+          }
+          100% {
+            color: gray;
+          }
+        }
+
+        /* Apply the animation to the .flash-status class */
+        .flash-status a {
+          animation: flash 1s infinite;
+        }
+      </style>
+      <script src="scripts/alert.js"></script>
+      <audio id="alert-sound" src="./scripts/alert.mp3" preload="auto"></audio>
+
+      <div class="flex flex-wrap items-center gap-4 text-lg">
+        <div
+          class="nav-links duration-500 md:static fixed md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 z-50 backdrop-blur">
+          <ul
+            class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-4">
+            <li><a class="hover:text-gray-500" href="./home.html">Home</a></li>
+            <li>
+              <a class="hover:text-gray-500" href="./careers.html">Careers</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./maintenance.html">Store</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./blogs.html">Blogs</a>
+            </li>
+            <li class="flash-status">
+              <a class="hover:text-gray-500" href="./status.html">Status</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./tech mode.html"
+                >Tech Mode</a
+              >
+            </li>
+            <!-- Light/Dark Mode Toggle -->
+            <button
+              id="theme-toggle"
+              type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </ul>
+        </div>
+        <div class="flex items-center gap-6">
+          <ion-icon
+            onclick="onToggleMenu(this)"
+            name="menu"
+            class="text-3xl cursor-pointer md:hidden"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto p-5">
+      <h1
+        class="text-center text-[#0041a5] dark:text-[#5267ff] text-[75px] font-[1000]">
+        Flexa Status
+      </h1>
+      <h1
+        class="text-center text-[#ff414b] dark:text-[#ff414b] text-[35px] font-[1000]">
+        Sharding currently offline
+      </h1>
+      <div>
+        <p1 class="text-[25px] text-black dark:text-white">0/30 shards</p1
+        ><br />
+        <p2 class="text-[15px] text-black dark:text-white"
+          >6/6 clusters have problems</p2
+        ><br />
+        <p2 class="text-[15px] text-black dark:text-white"
+          >Cluster Uptime: Offline</p2
+        ><br />
+        <!-- <span id="uptime-0"></span> -->
+        <p2 class="text-[30px] text-black dark:text-white"
+          >Availability per service</p2
+        ><br />
+        <p2 class="text-[15px] text-black dark:text-white"
+          >Refresh in: <span id="refreshcountdown"></span> seconds</p2
+        >
+      </div>
+      <script>
+        // JavaScript code to implement countdown and page refresh
+        let countdown = 15; // Initial countdown value
+
+        function updateCountdown() {
+          document.getElementById("refreshcountdown").textContent = countdown;
+          countdown--;
+
+          if (countdown < 0) {
+            // Refresh the page when countdown reaches 0
+            location.reload();
+          } else {
+            // Schedule the next update after 1 second
+            setTimeout(updateCountdown, 1000);
+          }
+        }
+
+        // Start the countdown
+        updateCountdown();
+      </script>
+      <div class="flex items-center space-x-2">
+        <div class="w-3 h-3 bg-[#01e6ce] rounded-full inline-block"></div>
+        <p class="text-[#01e6ce] inline-block">Operational</p>
+        <div class="w-3 h-3 bg-[#ff9b00] rounded-full inline-block ml-4"></div>
+        <p class="text-[#ff9b00] inline-block">Partial Outage</p>
+        <div class="w-3 h-3 bg-[#ff414b] rounded-full inline-block ml-4"></div>
+        <p class="text-[#ff414b] inline-block">Major Outage</p>
+        <div
+          class="w-3 h-3 dark:bg-[#848482] bg-[#000000] rounded-full inline-block ml-4"></div>
+        <p class="dark:text-[#848482] text-[#000000] inline-block">Offline</p>
+      </div>
+    </div>
+
+    <!-- Cluster Grid -->
+    <div class="justify-center items-center ml-10">
+      <div class="cluster-grid">
+        <div
+          class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+          data-cluster="0">
+          0
+          <div class="cluster-popup" id="popup-0">
+            <div>Cluster 0</div>
+            <div>Shards: 0 - 5</div>
+            <div>Uptime: <span id="uptime-0"></span></div>
+            <div><strong>0 Shard(s) unavailable</strong></div>
+          </div>
+        </div>
+        <div
+          class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+          data-cluster="1">
+          1
+          <div class="cluster-popup" id="popup-1">
+            <div>Cluster 1</div>
+            <div>Shards: 6 - 11</div>
+            <div>Uptime: <span id="uptime-1"></span></div>
+            <div><strong>0 Shard(s) unavailable</strong></div>
+          </div>
+        </div>
+        <div
+          class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+          data-cluster="2">
+          2
+          <div class="cluster-popup" id="popup-2">
+            <div>Cluster 2</div>
+            <div>Shards: 12 - 17</div>
+            <div>Uptime: <span id="uptime-2"></span></div>
+            <div><strong>0 Shard(s) unavailable</strong></div>
+          </div>
+        </div>
+        <div
+          class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+          data-cluster="3">
+          3
+          <div class="cluster-popup" id="popup-3">
+            <div>Cluster 3</div>
+            <div>Shards: 18 - 23</div>
+            <div>Uptime: <span id="uptime-3"></span></div>
+            <div><strong>0 Shard(s) unavailable</strong></div>
+          </div>
+        </div>
+        <div
+          class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+          data-cluster="4">
+          4
+          <div class="cluster-popup" id="popup-4">
+            <div>Cluster 4</div>
+            <div>Shards: 24 - 29</div>
+            <div>Uptime: <span id="uptime-4"></span></div>
+            <div><strong>0 Shard(s) unavailable</strong></div>
+          </div>
+        </div>
+        <div
+          class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+          data-cluster="5">
+          5
+          <div class="cluster-popup" id="popup-5">
+            <div>Cluster 5</div>
+            <div>Shards: 30 - 35</div>
+            <div>Uptime: <span id="uptime-5"></span></div>
+            <div><strong>0 Shard(s) unavailable</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Cluster Grid -->
+
+    <div class="">
+      <div
+        class="flex flex-col mt-20 flex-wrap gap-2 p-5 items-center justify-center text-center text-[#0041a5] dark:text-[#5267ff] text-sm">
+        <div
+          class="flex gap-4 mt-20 items-center justify-center flex-wrap transition-opacity duration-500 opacity-0"
+          id="footer">
+          <p>
+            Flexa Bot: Empowering Communities | Copyright 2024 © Flexa Group.
+            All rights reserved. <a href="sitemap.html">Site map</a>
+          </p>
+          <a
+            href="https://www.instagram.com/flexagroupofficial/"
+            target="_blank">
+            <img src="./images/instalogo.png" width="20px" />
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-10 items-center justify-center">
+          <a href="./policies/termsofservice.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/termsofservice.html'">
+              Terms of Service
+            </button>
+          </a>
+          <a href="./policies/privacy.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/privacy.html'">
+              Privacy Policy
+            </button>
+          </a>
+          <a href="./policies/cookies.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Cookie Policy
+            </button>
+          </a>
+          <a href="./policies/support.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Support Policy
+            </button>
+          </a>
+          <a href="./policies/payments.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Payments Policy
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/homePage.js"></script>
+    <script src="scripts/server.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        const startDate = new Date("2024-05-16T01:00:00Z");
+
+        // Fetch cluster data from the backend
+        const fetchClusterData = async () => {
+          try {
+            const response = await fetch(
+              "https://your-heroku-app-name.herokuapp.com/api/clusters"
+            );
+            const clusters = await response.json();
+
+            // Update the DOM with the fetched data
+            clusters.forEach((cluster) => {
+              document.querySelector(
+                `#popup-${cluster.clusterId} .shards`
+              ).textContent = `Shards: ${cluster.shards}`;
+              document.querySelector(
+                `#popup-${cluster.clusterId} .problems`
+              ).textContent = `${cluster.problems} Shard(s) unavailable`;
+              document.querySelector(
+                `#popup-${cluster.clusterId} .uptime`
+              ).textContent = cluster.uptime;
+              document.querySelector(
+                `[data-cluster="${cluster.clusterId}"]`
+              ).style.color = cluster.color;
+            });
+          } catch (err) {
+            console.error("Failed to fetch cluster data", err);
+          }
+        };
+
+        fetchClusterData();
+
+        const updateUptime = () => {
+          const now = new Date();
+          const diff = now - startDate;
+
+          const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+          const remainingDays = Math.floor((diff / (1000 * 60 * 60 * 24)) % 7);
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((diff / 1000 / 60) % 60);
+          const seconds = Math.floor((diff / 1000) % 60);
+
+          const uptimeText = [];
+
+          if (weeks > 0) uptimeText.push(`${weeks} w`);
+          if (days > 0) uptimeText.push(`${days % 7} d`);
+          uptimeText.push(`${hours} h`);
+          uptimeText.push(`${minutes} m`);
+          uptimeText.push(`${seconds} s`);
+
+          document.querySelectorAll("[id^=uptime-]").forEach((el) => {
+            el.textContent = uptimeText.join(" ");
+          });
+        };
+
+        setInterval(updateUptime, 1000);
+
+        document.querySelectorAll(".cluster-grid-item").forEach((item) => {
+          item.addEventListener("click", function () {
+            const popup = this.querySelector(".cluster-popup");
+            popup.style.display =
+              popup.style.display === "block" ? "none" : "block";
+          });
+
+          // Hide all other popups when clicking outside
+          document.addEventListener("click", function (event) {
+            if (!item.contains(event.target)) {
+              item.querySelector(".cluster-popup").style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var anchors = document.querySelectorAll("a[href$='.html']");
+        anchors.forEach(function (anchor) {
+          anchor.setAttribute(
+            "href",
+            anchor.getAttribute("href").replace(".html", "")
+          );
+        });
+      });
+    </script>
+    <title>Error 404</title>
+    <script src="scripts/server.js"></script>
+    <script src="scripts/alert.js"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap");
+      body.error404 {
+        background-color: #f4f4f4;
+      }
+
+      .error-container {
+        text-align: center;
+        margin-top: 10%;
+      }
+
+      .error-text {
+        font-size: 125px;
+        color: rgba(0, 65, 165, 1);
+        font-family: "Lexend";
+        font-weight: 1000;
+        padding-left: 5px;
+      }
+
+      .error-message {
+        font-size: 50px;
+        margin-top: -50px;
+        font-family: "Lexend";
+        color: black;
+        text-align: center;
+      }
+
+      .button9 {
+        font-family: "Lexend", sans-serif;
+        font-size: 18px;
+        color: black;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s ease; /* Add transition for smooth color change */
+      }
+
+      .button9:hover {
+        color: #5398e5; /* Change to the desired hover color */
+      }
+    </style>
+    <title>Flexa Group - Error 404</title>
+    <link rel="icon" type="image/x-icon" href="/images/Flexa Logo.png" />
+  </head>
+  <body class="error404">
+    <div class="navbar">
+      <button class="button9" onclick="window.location.href='../home.html'">
+        Home
+      </button>
+    </div>
+    <div class="container">
+      <div class="error-container">
+        <p class="error-text">ERROR 404</p>
+        <p class="error-message">Something went wrong!</p>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Remove .html from anchor tags
+        var anchors = document.querySelectorAll("a[href$='.html']");
+        anchors.forEach(function (anchor) {
+          anchor.setAttribute(
+            "href",
+            anchor.getAttribute("href").replace(".html", "")
+          );
+        });
+
+        // Remove .html from the current page's URL
+        var currentPageUrl = window.location.href;
+        if (currentPageUrl.endsWith(".html")) {
+          var updatedUrl = currentPageUrl.replace(".html", "");
+          window.history.replaceState({}, document.title, updatedUrl);
+        }
+      });
+    </script>
+    <audio id="alert-sound" src="./scripts/alert.mp3" preload="auto"></audio>
+
+    <script>
+      // Function to check if the user's IP is blacklisted
+      async function checkBlacklist() {
+        try {
+          const response = await fetch("blacklistedips.txt");
+          const blacklistText = await response.text();
+          const blacklistedIPs = blacklistText
+            .split("\n")
+            .map((ip) => ip.trim())
+            .filter((ip) => ip !== "");
+
+          const userIP = await fetch("https://api64.ipify.org?format=json")
+            .then((response) => response.json())
+            .then((data) => data.ip);
+
+          if (blacklistedIPs.includes(userIP)) {
+            window.location.href = "blocked.html";
+          }
+        } catch (error) {
+          console.error("Error checking blacklist:", error);
+        }
+      }
+
+      // Call the checkBlacklist function when the page loads
+      checkBlacklist();
+
+      // Rest of your existing code...
+    </script>
+  </body>
+</html>

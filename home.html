@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Flexa Group</title>
+    <meta
+      name="description"
+      content="Flexa Group | The all in one bot that empowers communities" />
+    <meta name="author" content="Flexa Group" />
+    <meta property="og:image" content="./images/Flexa_Logo.png" />
+    <link rel="icon" type="image/x-icon" href="./images/Flexa_Logo.png" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </head>
+  <script src="scripts/alert.js"></script>
+  <script src="scripts/server.js"></script>
+
+  <audio id="alert-sound" src="./scripts/alert.mp3" preload="auto"></audio>
+  <body>
+    <!-- Start of HubSpot Embed Code -->
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js-eu1.hs-scripts.com/144091263.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    <div class="flex items-center justify-between gap-4 px-5 mt-4">
+      <a href="home.html">
+        <div class="flex items-center gap-4">
+          <img
+            src="./images/Flexa_Logo.png"
+            alt="Flexa Group Logo"
+            class="h-10" />
+          <p class="text-lg">Flexa Group</p>
+        </div>
+      </a>
+
+      <style>
+        @keyframes flash {
+          0% {
+            color: gray;
+          }
+          50% {
+            color: #ff414b;
+          }
+          100% {
+            color: gray;
+          }
+        }
+
+        /* Apply the animation to the .flash-status class */
+        .flash-status a {
+          animation: flash 1s infinite;
+        }
+      </style>
+      <div class="flex flex-wrap items-center gap-4 text-lg">
+        <div
+          class="nav-links duration-500 md:static fixed md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 z-50 backdrop-blur">
+          <ul
+            class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-4">
+            <li><a class="hover:text-gray-500" href="./home.html">Home</a></li>
+            <li>
+              <a class="hover:text-gray-500" href="./careers.html">Careers</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./maintenance.html">Store</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./blogs.html">Blogs</a>
+            </li>
+            <li class="flash-status">
+              <a class="hover:text-gray-500" href="./status.html">Status</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./tech mode.html"
+                >Tech Mode</a
+              >
+            </li>
+            <!-- Light/Dark Mode Toggle -->
+            <button
+              id="theme-toggle"
+              type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </ul>
+        </div>
+        <div class="flex items-center gap-6">
+          <ion-icon
+            onclick="onToggleMenu(this)"
+            name="menu"
+            class="text-3xl cursor-pointer md:hidden"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <script>
+      const navLinks = document.querySelector(".nav-links");
+      function onToggleMenu(e) {
+        e.name = e.name === "menu" ? "close" : "menu";
+        navLinks.classList.toggle("top-[9%]");
+      }
+    </script>
+
+    <div class="container mx-auto p-5">
+      <h1
+        class="text-center text-[#0041a5] dark:text-[#5267ff] text-[75px] font-[1000]">
+        Welcome to Flexa Group
+      </h1>
+
+      <!-- FAQ -->
+      <div
+        class="divide-y divide-gray-100 dark:divide-gray-700 rounded-xl border border-[] bg-white dark:border-gray-700 dark:bg-[#1e1e1e]">
+        <details
+          class="group p-6 [&_summary::-webkit-details-marker]:hidden"
+          close>
+          <summary
+            class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
+            <h2 class="text-xl text-[#0014a5] dark:text-[#5267ff] font-medium">
+              Who are we?
+            </h2>
+
+            <span class="relative h-5 w-5 shrink-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 dark:text-[#fff]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                stroke-width="2">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 dark:text-[#fff]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                stroke-width="2">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+          </summary>
+
+          <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            Flexa Group goes beyond being just a discord bot; it's a thriving
+            community where individuals share a common passion for nurturing
+            creativity, collaboration, and engagement in the digital world. As a
+            versatile discord bot, Flexa seamlessly becomes a part of discord
+            servers, providing an array of features to enrich the user
+            experience. From customizable moderation tools to engaging games,
+            music playback, and automated tasks, Flexa Bot isn't merely a tool,
+            it's a companion that brings depth and excitement to online
+            communities. With a growing set of features and a lively user base,
+            Flexa embodies innovation and camaraderie, turning discord servers
+            into lively hubs of interaction and entertainment.
+          </p>
+        </details>
+
+        <details
+          class="group p-6 [&_summary::-webkit-details-marker]:hidden"
+          close>
+          <summary
+            class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
+            <h2 class="text-xl text-[#0014a5] dark:text-[#5267ff] font-medium">
+              What do we offer?
+            </h2>
+
+            <span class="relative h-5 w-5 shrink-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 dark:text-[#fff]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 dark:text-[#fff]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+          </summary>
+
+          <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            Flexa Group offers a versatile and feature-rich Discord bot designed
+            to enhance your server experience. Currently, we provide a
+            comprehensive free plan that includes a range of functionalities to
+            meet your Discord community's needs. Our bot is equipped with
+            various commands and features to engage your members, moderate your
+            server, and create an enjoyable environment. As we continue to grow,
+            Flexa Group is excited to introduce a premium plan that will offer
+            even more advanced features and exclusive benefits. Stay tuned for
+            updates on our premium plan, designed to take your Discord server to
+            the next level. Whether you're a community manager, gamer, or just
+            someone who loves Discord, Flexa Group is here to provide a
+            customizable and dynamic bot experience for your server.
+          </p>
+        </details>
+
+        <details
+          class="group p-6 [&_summary::-webkit-details-marker]:hidden"
+          close>
+          <summary
+            class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
+            <h2 class="text-xl text-[#0014a5] dark:text-[#5267ff] font-medium">
+              Our working hours
+            </h2>
+            <span class="relative h-5 w-5 shrink-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 dark:text-[#fff]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 dark:text-[#fff]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+          </summary>
+
+          <div
+            class="grid grid-cols-7 gap-4 mt-2 leading-relaxed text-gray-700 dark:text-gray-300 text-center">
+            <div class="col-span-7">All our hours are in UTC+0</div>
+          </div>
+          <div
+            class="grid grid-cols-7 gap-4 mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <div class="col-span-1">Monday</div>
+            <div class="col-span-1">Tuesday</div>
+            <div class="col-span-1">Wednesday</div>
+            <div class="col-span-1">Thursday</div>
+            <div class="col-span-1">Friday</div>
+            <div class="col-span-1">Saturday</div>
+            <div class="col-span-1">Sunday</div>
+            <div class="col-span-1">10am - 6pm</div>
+            <div class="col-span-1">10am - 6pm</div>
+            <div class="col-span-1">10am - 6pm</div>
+            <div class="col-span-1">10am - 6pm</div>
+            <div class="col-span-1">10am - 6pm</div>
+            <div class="col-span-1">12pm - 6pm</div>
+            <div class="col-span-1">CLOSED</div>
+          </div>
+        </details>
+      </div>
+      <!-- End FAQ -->
+
+      <div>
+        <p
+          class="text-center text-[#0041a5] dark:text-[#5267ff] text-2l font-bold overflow-hidden">
+          If you ever need support, please contact support by the widget in the
+          bottom right. Or via the email:
+          <a href="mailto:support@flexagroup.co.uk">support@flexagroup.co.uk</a
+          >.
+        </p>
+      </div>
+      <a href="./tech mode.html"
+        ><button
+          class="w-full mt-3 border border-[#B8860B] dark:border-[#ffbf00] text-[#B8860B] dark:text-[#ffbf00] py-2.5 px-14 opacity-100"
+          draggable="false"
+          id="techmode"
+          style="animation: sway 1.3s infinite alternate-reverse">
+          Pre Order Flexa Tech Mode
+        </button></a
+      >
+      <!-- Buttons -->
+      <div class="my-8 flex flex-col gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <a href="https://docs.flexagroup.co.uk" target="_blank">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]">
+              Documentation
+            </button>
+          </a>
+
+          <a href="./status.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              enabled>
+              Status Page
+            </button>
+          </a>
+        </div>
+        <div class="flex flex-col gap-8">
+          <a href="https://discord.com/invite/m6MK4KqfSK" target="_blank">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]">
+              Join our server
+            </button>
+          </a>
+          <a
+            href="https://discord.com/api/oauth2/authorize?client_id=1167846787248300142&permissions=8&scope=bot"
+            target="_blank">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]">
+              Add us to your server
+            </button>
+          </a>
+          <a
+            href="https://drive.google.com/file/u/4/d/1j8cOOcOHZ56UfnU66YWo64snfXmWRDpE/view?usp=sharing"
+            target="_blank">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]">
+              Our Holidays
+            </button>
+          </a>
+        </div>
+      </div>
+      <!-- End Buttons -->
+
+      <!-- Developers -->
+      <div>
+        <h2
+          class="text-center text-[#0041a5] dark:text-[#5267ff] text-3xl font-bold">
+          Developers
+        </h2>
+
+        <div class="flex items-center flex-wrap justify-center gap-8 my-8">
+          <div
+            class="devs flex flex-col flex-wrap gap-2 items-center justify-center cursor-pointer"
+            onclick="showPopup('popup1')">
+            <img
+              src="./developers/charlie.jpeg"
+              class="w-[150px] rounded-full"
+              draggable="false"
+              onerror="this.onerror=null; this.src='./images/Flexa UPFP.png';" />
+            <p class="text-lg">CJayStreamz</p>
+          </div>
+
+          <div
+            class="devs flex flex-col flex-wrap gap-2 items-center justify-center cursor-pointer"
+            onclick="showPopup('popup3')">
+            <img
+              src="./developers/cal.png"
+              class="w-[150px] rounded-full"
+              draggable="false"
+              onerror="this.onerror=null; this.src='./images/Flexa UPFP.png';" />
+            <p class="text-lg">Cal</p>
+          </div>
+
+          <div
+            class="devs flex flex-col flex-wrap gap-2 items-center justify-center cursor-pointer"
+            onclick="showPopup('popup5')">
+            <img
+              src="./developers/encrypted_noobi.png"
+              class="w-[150px] rounded-full"
+              draggable="false"
+              onerror="this.onerror=null; this.src='./images/Flexa UPFP.png';" />
+            <p class="text-lg">encrypted_noobi</p>
+          </div>
+
+          <div
+            class="devs flex flex-col flex-wrap gap-2 items-center justify-center cursor-pointer"
+            onclick="showPopup('popup6')">
+            <img
+              src="./developers/teared15.jpg"
+              class="w-[150px] rounded-full"
+              draggable="false"
+              onerror="this.onerror=null; this.src='./images/Flexa UPFP.png';" />
+            <p class="text-lg">teared15</p>
+          </div>
+
+          <div
+            class="devs flex flex-col flex-wrap gap-2 items-center justify-center cursor-pointer"
+            onclick="showPopup('popup7')">
+            <img
+              src="./developers/ryleigh.png"
+              class="w-[150px] rounded-full"
+              draggable="false"
+              onerror="this.onerror=null; this.src='./images/Flexa UPFP.png';" />
+            <p class="text-lg">r.hurst123</p>
+          </div>
+        </div>
+      </div>
+      <!-- End Developers -->
+
+      <!-- Popups -->
+      <div>
+        <!-- Popup 1 -->
+        <div
+          class="hidden popup fixed z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4"
+          id="popup1">
+          <div
+            class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
+              >&#8203;</span
+            >
+
+            <div
+              class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-sm w-full sm:p-6 dark:bg-gray-900">
+              <div>
+                <h2 class="text-xl mb-3 font-bold">User: CJayStreamz</h2>
+                <p>Discord ID: 972599697229365278</p>
+                <p>Role: Operations Manager</p>
+                <p>Owner</p>
+              </div>
+
+              <button
+                class="w-full px-4 py-2 mt-4 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:w-auto hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+                onclick="closePopup('popup1')">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popup 3 -->
+        <div
+          class="hidden popup fixed z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4"
+          id="popup3">
+          <div
+            class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
+              >&#8203;</span
+            >
+
+            <div
+              class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-sm w-full sm:p-6 dark:bg-gray-900">
+              <div>
+                <h2 class="text-xl mb-3 font-bold">User: Cal</h2>
+                <p>Discord ID: 1194401972665716820</p>
+                <p>Role: Head Technician</p>
+              </div>
+
+              <button
+                class="w-full px-4 py-2 mt-4 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:w-auto hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+                onclick="closePopup('popup3')">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popup 5 -->
+        <div
+          class="hidden popup fixed z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4"
+          id="popup5">
+          <div
+            class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
+              >&#8203;</span
+            >
+
+            <div
+              class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-sm w-full sm:p-6 dark:bg-gray-900">
+              <div>
+                <h2 class="text-xl mb-3 font-bold">User: Encrypted_noobi</h2>
+                <p>Discord ID: 539825944836440064</p>
+                <p>Role: Technician</p>
+              </div>
+
+              <button
+                class="w-full px-4 py-2 mt-4 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:w-auto hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+                onclick="closePopup('popup5')">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popup 6 -->
+        <div
+          class="hidden popup fixed z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4"
+          id="popup6">
+          <div
+            class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
+              >&#8203;</span
+            >
+
+            <div
+              class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-sm w-full sm:p-6 dark:bg-gray-900">
+              <div>
+                <h2 class="text-xl mb-3 font-bold">User: Teared15</h2>
+                <p>Discord ID: 759150617276448788</p>
+                <p>Role: Trial Bot Technician</p>
+              </div>
+
+              <button
+                class="w-full px-4 py-2 mt-4 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:w-auto hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+                onclick="closePopup('popup6')">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popup 7 -->
+        <div
+          class="hidden popup fixed z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4"
+          id="popup7">
+          <div
+            class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
+              >&#8203;</span
+            >
+
+            <div
+              class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-sm w-full sm:p-6 dark:bg-gray-900">
+              <div>
+                <h2 class="text-xl mb-3 font-bold">User: r.hurst123</h2>
+                <p>Discord ID: 803671779784654882</p>
+                <p>Role: Trial Website Technician</p>
+              </div>
+
+              <button
+                class="w-full px-4 py-2 mt-4 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:w-auto hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+                onclick="closePopup('popup7')">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Popups -->
+    </div>
+
+    <!-- Footer -->
+    <div
+      class="flex flex-col flex-wrap gap-2 p-5 items-center justify-center text-center text-[#0041a5] dark:text-[#5267ff] text-sm">
+      <div
+        class="flex gap-4 items-center justify-center flex-wrap transition-opacity duration-500 opacity-0"
+        id="footer">
+        <p>
+          Flexa Bot: Empowering Communities | Copyright 2024 © Flexa Group. All
+          rights reserved. <a href="sitemap.html">Site map</a>
+        </p>
+
+        <a href="https://www.instagram.com/flexagroupofficial/" target="_blank">
+          <img src="./images/instalogo.png" width="20px" />
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-10 items-center justify-center">
+        <a href="./policies/termsofservice.html">
+          <button
+            class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+            onclick="window.location.href='./policies/termsofservice.html'">
+            Terms of Service
+          </button>
+        </a>
+        <a href="./policies/privacy.html">
+          <button
+            class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+            onclick="window.location.href='./policies/privacy.html'">
+            Privacy Policy
+          </button>
+        </a>
+        <a href="./policies/cookies.html">
+          <button
+            class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+            onclick="window.location.href='./policies/cookies.html'">
+            Cookie Policy
+          </button>
+        </a>
+        <a href="./policies/support.html">
+          <button
+            class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+            onclick="window.location.href='./policies/cookies.html'">
+            Support Policy
+          </button>
+        </a>
+        <a href="./policies/payments.html">
+          <button
+            class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+            onclick="window.location.href='./policies/cookies.html'">
+            Payments Policy
+          </button>
+        </a>
+      </div>
+    </div>
+    <!-- End Footer -->
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/homePage.js"></script>
+
+    <!-- Support system-->
+    <!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
+    <call-us-selector
+      phonesystem-url="https://1414.3cx.cloud"
+      party="flexagroup"></call-us-selector>
+
+    <!--Incase you don't want real time updates to the live chat plugin when options are changed, use the below code snippet. Please note that each time you change the settings you will need to copy and paste the snippet code to your website-->
+    <!--<call-us 
+phonesystem-url="https://1414.3cx.cloud" 
+style="position:fixed;font-size:16px;line-height:17px;z-index: 99999;--call-us-main-accent-color:#14A5FF;--call-us-main-background-color:#404040;--call-us-plate-background-color:#373737;--call-us-plate-font-color:#D9D9D9;--call-us-main-font-color:#FFFFFF;--call-us-agent-bubble-color:#FFFFFF10;right: 20px; bottom: 20px;" 
+id="wp-live-chat-by-3CX" 
+minimized="false" 
+animation-style="slidefromside" 
+party="flexagroup" 
+minimized-style="bubbleright" 
+allow-call="true" 
+allow-video="false" 
+allow-soundnotifications="true" 
+enable-mute="true" 
+enable-onmobile="true" 
+offline-enabled="true" 
+enable="true" 
+ignore-queueownership="true" 
+authentication="both" 
+operator-name="Flexa Group" 
+show-operator-actual-name="true" 
+aknowledge-received="true" 
+operator-icon="data:image/png;base64,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" 
+gdpr-enabled="false" 
+message-userinfo-format="both" 
+message-dateformat="both" 
+lang="browser" 
+button-icon-type="default" 
+unavailable-message="We are currently away at the moment, please leave us a message by text or call!" 
+ending-message="Thank you for letting us help you, we hope everything is working up to your standard!" 
+greeting-visibility="none" 
+greeting-offline-visibility="none" 
+chat-delay="2000" 
+enable-direct-call="true" 
+enable-ga="false" 
+></call-us>-->
+    <script
+      defer
+      src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js"
+      id="tcx-callus-js"
+      charset="utf-8"></script>
+  </body>
+</html>

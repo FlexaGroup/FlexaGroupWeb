@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   // Get all anchor tags with a .html extension and remove it
+      //   var anchors = document.querySelectorAll("a[href$='.html']");
+      //   anchors.forEach(function (anchor) {
+      //     anchor.setAttribute(
+      //       "href",
+      //       anchor.getAttribute("href").replace(".html", "")
+      //     );
+      //   });
+      // });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service</title>
+
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f0f0f0; /* Set a background color for better visibility */
+      }
+
+      #terms-container {
+        max-width: 800px;
+        width: 90%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: transparent;
+        text-align: justify;
+      }
+
+      .terms-container,
+      h1,
+      .effective-date {
+        color: rgba(0, 65, 165, 1);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" />
+  </head>
+
+  <body>
+    <div id="terms-container">
+      <h1>Privacy Policy</h1>
+      <p class="effective-date"><strong>Effective Date:</strong> 15/01/2024</p>
+
+      <p>
+        Thank you for choosing Flexa Discord Bot ("Flexa" or the "Bot"). This
+        Privacy Policy outlines how we collect, use, disclose, and protect your
+        information when you use Flexa. By using the Bot, you agree to the terms
+        of this Privacy Policy.
+      </p>
+
+      <h3>1. Information We Collect:</h3>
+
+      <p>
+        We may collect the following types of information when you use Flexa:
+      </p>
+
+      <ul>
+        <li>
+          User Data: We may collect data provided by you, such as your Discord
+          username or other information you voluntarily share.
+        </li>
+        <li>
+          Usage Data: We automatically collect information about your
+          interactions with Flexa, including commands used and preferences.
+        </li>
+        <li>
+          Log Data: Like many online services, we collect log files that include
+          IP addresses, browser type, and other usage details.
+        </li>
+      </ul>
+
+      <h3>2. How We Use Your Information:</h3>
+
+      <p>We use the collected information for the following purposes:</p>
+
+      <ul>
+        <li>
+          To Provide and Improve Flexa: Enhancing and maintaining the features
+          and functionality of the Bot.
+        </li>
+        <li>
+          User Support: Responding to your inquiries and providing customer
+          support.
+        </li>
+        <li>
+          Analytics: Analyzing usage patterns to improve Flexa's performance.
+        </li>
+      </ul>
+
+      <h3>3. Disclosure of Your Information:</h3>
+
+      <p>
+        We do not sell or share your information with third parties. However, we
+        may disclose information in the following circumstances:
+      </p>
+
+      <ul>
+        <li>
+          With Your Consent: If you explicitly authorize us to share specific
+          information.
+        </li>
+        <li>
+          Legal Compliance: To comply with applicable laws, regulations, or
+          legal processes.
+        </li>
+      </ul>
+
+      <h3>4. Security:</h3>
+
+      <p>
+        We prioritize the security of your information. However, no method of
+        transmission over the internet or electronic storage is completely
+        secure. We cannot guarantee absolute security.
+      </p>
+
+      <h3>5. Your Choices:</h3>
+
+      <p>
+        You can choose not to provide certain information, but it may impact
+        your ability to use specific features of Flexa.
+      </p>
+
+      <h3>6. Changes to Privacy Policy:</h3>
+
+      <p>
+        We reserve the right to update this Privacy Policy. Significant changes
+        will be notified to you, and your continued use of Flexa after such
+        changes constitutes acceptance.
+      </p>
+
+      <h3>7. Contact Us:</h3>
+
+      <p>
+        If you have questions or concerns about this Privacy Policy, please
+        contact us at charliejayfarnsworth@gmail.com.
+      </p>
+
+      <h3>8. Governing Law:</h3>
+
+      <p>
+        This Privacy Policy is governed by and construed in accordance with the
+        laws of the United Kingdom, without regard to its conflict of law
+        principles.
+      </p>
+
+      <p>
+        By using Flexa, you acknowledge that you have read, understood, and
+        agree to be bound by this Privacy Policy.
+      </p>
+
+      <p>Copyright © Flexa Group 2024</p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Remove .html from anchor tags
+        var anchors = document.querySelectorAll("a[href$='.html']");
+        anchors.forEach(function (anchor) {
+          anchor.setAttribute(
+            "href",
+            anchor.getAttribute("href").replace(".html", "")
+          );
+        });
+
+        // Remove .html from the current page's URL
+        var currentPageUrl = window.location.href;
+        if (currentPageUrl.endsWith(".html")) {
+          var updatedUrl = currentPageUrl.replace(".html", "");
+          window.history.replaceState({}, document.title, updatedUrl);
+        }
+      });
+
+      // JavaScript to toggle the visibility of the footer based on scroll position
+      window.onscroll = function () {
+        showHideFooter();
+      };
+
+      function showHideFooter() {
+        var footer = document.getElementById("footer");
+        var scrollPosition =
+          window.scrollY ||
+          window.pageYOffset ||
+          document.body.scrollTop ||
+          document.documentElement.scrollTop;
+
+        // Adjust the value (400) based on when you want the footer to appear
+        if (scrollPosition > 400) {
+          footer.style.display = "block";
+        } else {
+          footer.style.display = "none";
+        }
+      }
+
+      setInterval(function () {
+        location.reload();
+      }, 300000);
+
+      window.handleLinkClick = function (url) {
+        setTimeout(function () {
+          url = url.replace(".html", "");
+          window.location.href = url;
+        }, 600); // Removed extra "6" here
+      };
+    </script>
+  </body>
+</html>

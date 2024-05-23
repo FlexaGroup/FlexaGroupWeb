@@ -1,0 +1,32 @@
+#5398e5 -> Light Blue
+
+#1155cc -> Dark Blue
+
+#0041a5 -> Darker Blue
+
+#33277a -> Flexa Purple
+
+#23c17b -> Flexa Green
+
+#7f7f7e -> Flexa Grey
+
+#3d96d9 -> Flexa Blue
+
+#2d3e4d -> Flexa Dark Grey
+
+--STATUS COLORS--
+
+#008000 -> Operational
+#015201 -> Operational Warning Img
+
+#1155cc -> Maintenance
+#0B3B8E -> Maintenance Warning Img
+
+#228B22 -> Lowered
+#176117 -> Lowered Warning Img
+
+#FFC000	-> Medium
+#b28600 -> Medium Warning Img
+
+#D70040 -> High
+#96002c -> High Warning Img

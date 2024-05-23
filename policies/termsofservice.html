@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service</title>
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f0f0f0; /* Set a background color for better visibility */
+      }
+
+      #terms-container {
+        max-width: 800px;
+        width: 90%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: transparent;
+        text-align: left;
+      }
+
+      .terms-container,
+      h1 {
+        color: rgba(0, 65, 165, 1);
+      }
+      .effective-date {
+        color: rgba(0, 65, 165, 1);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" />
+  </head>
+
+  <body>
+    <div id="terms-container">
+      <h1>Terms of Service</h1>
+      <p class="effective-date"><strong>Effective Date:</strong> 15/01/2024</p>
+
+      <p>
+        By using the Flexa Discord Bot ("Flexa" or the "Bot"), you agree to
+        comply with and be bound by the following terms and conditions (the
+        "Terms of Service"). If you do not agree to these Terms of Service,
+        please refrain from using Flexa.
+      </p>
+
+      <h2>1. User Eligibility:</h2>
+      <p>You must be at least 13 years old to use Flexa.</p>
+      <p>
+        If you are using Flexa on behalf of an organization, you represent and
+        warrant that you have the authority to bind that organization.
+      </p>
+
+      <h2>2. Use of Flexa:</h2>
+      <p>
+        Flexa is a Discord bot designed to enhance the Discord experience with
+        various features. You agree to use Flexa in compliance with Discord's
+        Terms of Service.
+      </p>
+      <p>
+        Flexa may only be used for lawful purposes. You shall not use the Bot
+        for any illegal activities or to violate the rights of others.
+      </p>
+
+      <h2>3. Availability:</h2>
+      <p>
+        Flexa is provided on an "as-is" and "as-available" basis. We do not
+        guarantee uninterrupted access to the Bot and reserve the right to
+        modify, suspend, or discontinue Flexa at any time.
+      </p>
+
+      <h2>4. Privacy Policy:</h2>
+      <p>
+        Your use of Flexa is subject to our Privacy Policy, which can be found
+        at [insert link to privacy policy].
+      </p>
+
+      <h2>5. Intellectual Property:</h2>
+      <p>
+        Flexa and its content are the intellectual property of the developers.
+        You may not reproduce, distribute, or create derivative works without
+        explicit permission.
+      </p>
+
+      <h2>6. User Conduct:</h2>
+      <p>
+        You agree not to harass, abuse, or harm other users or the Flexa
+        development team.
+      </p>
+      <p>
+        You shall not use Flexa to distribute spam, viruses, or any form of
+        malicious software.
+      </p>
+
+      <h2>7. Modification of Terms:</h2>
+      <p>
+        We reserve the right to modify or update these Terms of Service at any
+        time. You will be notified of any material changes, and your continued
+        use of Flexa after such changes constitutes acceptance.
+      </p>
+
+      <h2>8. Termination:</h2>
+      <p>
+        We may terminate your access to Flexa at any time for violation of these
+        Terms of Service or for any other reason without notice.
+      </p>
+
+      <h2>9. Disclaimer of Warranty:</h2>
+      <p>
+        Flexa is provided without warranties of any kind. We do not guarantee
+        the accuracy, completeness, or reliability of the Bot.
+      </p>
+
+      <h2>10. Limitation of Liability:</h2>
+      <p>
+        To the fullest extent permitted by applicable law, we shall not be
+        liable for any indirect, incidental, special, consequential, or punitive
+        damages, or any loss of profits or revenues.
+      </p>
+
+      <h2>11. Governing Law:</h2>
+      <p>
+        These Terms of Service are governed by and constructed in accordance
+        with the laws of the United Kingdom, without regard to its conflict of
+        law principles.
+      </p>
+
+      <p>
+        By using Flexa, you acknowledge that you have read, understood, and
+        agree to be bound by these Terms of Service. If you have any questions
+        or concerns, please contact us at <u>support@flexagroup.co.uk</u>.
+      </p>
+
+      <h2>12. Notice to all users:</h2>
+      <p>
+        Per to the law of the United Kingdom, people under the age of 18 are not
+        legally binded to the terms of service but we would greatly appreciate
+        it if you still followed these as it helps keep our communities a safer
+        environment.
+      </p>
+
+      <p>Copyright © Flexa Group 2024</p>
+    </div>
+
+    <script>
+      // JavaScript to toggle the visibility of the footer based on scroll position
+      window.onscroll = function () {
+        showHideFooter();
+      };
+
+      function showHideFooter() {
+        var footer = document.getElementById("footer");
+        var scrollPosition =
+          window.scrollY ||
+          window.pageYOffset ||
+          document.body.scrollTop ||
+          document.documentElement.scrollTop;
+
+        // Adjust the value (400) based on when you want the footer to appear
+        if (scrollPosition > 400) {
+          footer.style.display = "block";
+        } else {
+          footer.style.display = "none";
+        }
+      }
+
+      setInterval(function () {
+        location.reload();
+      }, 300000);
+
+      window.handleLinkClick = function (url) {
+        setTimeout(function () {
+          url = url.replace(".html", "");
+          window.location.href = url;
+        }, 600); // Removed extra "6" here
+      };
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Remove .html from anchor tags
+        var anchors = document.querySelectorAll("a[href$='.html']");
+        anchors.forEach(function (anchor) {
+          anchor.setAttribute(
+            "href",
+            anchor.getAttribute("href").replace(".html", "")
+          );
+        });
+
+        // Remove .html from the current page's URL
+        // var currentPageUrl = window.location.href;
+        // if (currentPageUrl.endsWith(".html")) {
+        //   var updatedUrl = currentPageUrl.replace(".html", "");
+        //   window.history.replaceState({}, document.title, updatedUrl);
+        // }
+      });
+    </script>
+  </body>
+</html>

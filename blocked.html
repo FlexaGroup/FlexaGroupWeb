@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var anchors = document.querySelectorAll("a[href$='.html']");
+        anchors.forEach(function (anchor) {
+          anchor.setAttribute(
+            "href",
+            anchor.getAttribute("href").replace(".html", "")
+          );
+        });
+      });
+    </script>
+    <title>Error 404</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap");
+      body.error404 {
+        background-color: #f4f4f4;
+      }
+
+      .error-container {
+        text-align: center;
+        margin-top: 10%;
+      }
+
+      .error-text {
+        font-size: 125px;
+        color: rgba(0, 65, 165, 1);
+        font-family: "Lexend";
+        font-weight: 1000;
+        padding-left: 5px;
+      }
+
+      .error-message {
+        font-size: 50px;
+        margin-top: -50px;
+        font-family: "Lexend";
+        color: black;
+        text-align: center;
+      }
+
+      .error-appeal {
+        font-size: 30px;
+        margin-top: -40px;
+        font-family: "Lexend";
+        color: black;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .button9 {
+        font-family: "Lexend", sans-serif;
+        font-size: 18px;
+        color: black;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s ease; /* Add transition for smooth color change */
+      }
+
+      .button9:hover {
+        color: #5398e5; /* Change to the desired hover color */
+      }
+    </style>
+    <title>Flexa Group - Blocked</title>
+    <link rel="icon" type="image/x-icon" href="/images/Flexa Logo.png" />
+  </head>
+  <body class="error404">
+    <div class="container">
+      <div class="error-container">
+        <p class="error-text">Blocked</p>
+        <p class="error-message">You have been blocked from Flexa Group.</p>
+        <p class="error-appeal">
+          <a
+            href="https://discord.com/invite/m6MK4KqfSK"
+            target="_blank"
+            class="button9"
+            >Appeal here</a
+          >
+        </p>
+        <p class="error-reason" id="reason"></p>
+        <p class="error-time" id="time"></p>
+      </div>
+    </div>
+    <audio id="alert-sound" src="./scripts/alert.mp3" preload="auto"></audio>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/server.js"></script>
+
+    <script src="scripts/alert.js"></script>
+    <script src="scripts/blacklist.js"></script>
+  </body>
+</html>

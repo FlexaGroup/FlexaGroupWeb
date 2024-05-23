@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@statuspage/status-widget": "^1.0.4",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "node": "^22.2.0",
+    "require": "^2.4.20",
+    "ws": "^8.17.0"
+  },
+  "name": "official-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

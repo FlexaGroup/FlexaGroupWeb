@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Flexa Group</title>
+    <meta
+      name="description"
+      content="Flexa Group | The all in one bot that empowers communities" />
+    <meta name="author" content="Flexa Group" />
+    <meta property="og:image" content="./images/Flexa_Logo.png" />
+    <link rel="icon" type="image/x-icon" href="./images/Flexa_Logo.png" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <head>
+      <!-- Required for IE11 Only -->
+      <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+      <!-- Standard dependencies -->
+      <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-bundle.js"></script>
+      <script src="https://unpkg.com/@statuspage/status-widget/dist/index.js"></script>
+      <statuspage-widget
+        class="statuspage-widget"
+        src="https://flexastatus.statuspage.io/"
+        appearance="badge"
+        Title="Flexa System Status"></statuspage-widget>
+      <link href="dist/style.css" rel="stylesheet" />
+    </head>
+    <style>
+      .statuspage-widget {
+        position: absolute;
+        margin-top: 10vh;
+        margin-left: 2vh;
+      }
+    </style>
+    <style>
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20vh;
+        height: 200vh; /* adjust if necessary */
+      }
+    </style>
+  </head>
+  <audio id="alert-sound" src="./scripts/alert.mp3" preload="auto"></audio>
+
+  <body>
+    <div class="center">
+      <ul class="list-disc inline-block">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="maintenance.html">Store</a></li>
+        <li><a href="tech mode.html">Tech Mode</a></li>
+        <li><a href="status.html">Status</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+        <br />
+        <li>
+          <u>Policies</u>
+          <ul class="policies">
+            <li>
+              <a href="policies/termsofservice.html">Terms of Services</a>
+            </li>
+            <li><a href="policies/payments.html">Payments Policy</a></li>
+            <li><a href="policies/cookies.html">Cookies Policy</a></li>
+            <li><a href="policies/privacy.html">Privacy Policy</a></li>
+            <li><a href="policies/support.html">Support Policy</a></li>
+          </ul>
+          <script src="scripts/server.js"></script>
+          <script src="scripts/alert.js"></script>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

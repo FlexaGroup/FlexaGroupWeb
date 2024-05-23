@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .container {
+        font-size: 10px;
+        width: 40em;
+        height: 40em;
+        position: relative;
+        z-index: 2; /* Ensure container is above other elements */
+      }
+
+      .sun {
+        position: absolute;
+        top: 15em;
+        left: 15em;
+        width: 10em;
+        height: 10em;
+        background-color: #3d96d9;
+        border-radius: 50%;
+        box-shadow: 0 0 3em #5398e5;
+      }
+
+      .earth,
+      .moon,
+      .sphere1 {
+        position: absolute;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+        border-width: 0.1em 0.1em 0 0;
+        border-radius: 50%;
+        z-index: 1; /* Ensure earth, moon, and sphere1 are behind container */
+      }
+
+      .earth {
+        top: 5em;
+        left: 5em;
+        width: 30em;
+        height: 30em;
+        animation: orbit 10s linear infinite; /* Increase speed */
+      }
+
+      .moon {
+        top: 0;
+        right: 0;
+        width: 8em;
+        height: 8em;
+        animation: orbit 2.7s linear infinite;
+      }
+
+      .sphere1 {
+        top: 10em; /* Adjust the position for the duplicated earth */
+        left: 10em; /* Adjust the position for the duplicated earth */
+        width: 25em; /* Adjust the size for the duplicated earth */
+        height: 25em; /* Adjust the size for the duplicated earth */
+        animation: orbit 15s linear infinite; /* Adjust the orbit speed */
+      }
+
+      .earth::before,
+      .moon::before,
+      .sphere1::before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .earth::before {
+        top: 2.8em;
+        right: 2.8em;
+        width: 3em;
+        height: 3em;
+        background-color: #1155cc;
+        box-shadow: 0 0 3em #5398e5;
+      }
+
+      .moon::before {
+        top: 0.3em;
+        right: 0.2em;
+        width: 1.2em;
+        height: 1.2em;
+        background-color: #23c17b;
+        box-shadow: 0 0 3em #0041a5;
+      }
+
+      .sphere1::before {
+        top: 2.8em; /* Adjust the position for the duplicated earth */
+        right: 2.8em; /* Adjust the position for the duplicated earth */
+        width: 3em; /* Adjust the size for the duplicated earth */
+        height: 3em; /* Adjust the size for the duplicated earth */
+        background-color: #1155cc; /* Adjust the color for the duplicated earth */
+        box-shadow: 0 0 3em #5398e5; /* Adjust the shadow for the duplicated earth */
+      }
+
+      @keyframes orbit {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Style for stars */
+      .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0; /* Ensure stars are behind other elements */
+      }
+
+      .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        width: 2px;
+        height: 2px;
+        /* Light bloom effect */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      /* Colors */
+      .star.light-blue {
+        background-color: #5398e5;
+      }
+
+      .star.flexa-purple {
+        background-color: #33277a;
+      }
+
+      .star.flexa-green {
+        background-color: #23c17b;
+      }
+
+      .star.flexa-blue {
+        background-color: #3d96d9;
+      }
+
+      /* Twinkling animation */
+      @keyframes twinkle {
+        0% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.5;
+        }
+      }
+
+      .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        width: 2px;
+        height: 2px;
+        /* Adjust brightness */
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        /* Apply twinkle animation */
+        animation: twinkle 2s linear infinite alternate;
+      }
+
+      /* Adjust brightness */
+      @keyframes brightness {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Stars container -->
+    <div class="stars-container"></div>
+    <div class="container">
+      <div class="sun"></div>
+      <div class="earth"></div>
+      <div class="sphere1"></div>
+      <!-- Adding duplicated earth -->
+      <div class="earth">
+        <div class="moon"></div>
+      </div>
+    </div>
+    <!-- Draggable Spheres -->
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const starsContainer = document.querySelector(".stars-container");
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        // Function to create a star with individual twinkling
+        function createStar() {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          if (!isMobile) {
+            star.style.animation =
+              "twinkle 2s linear infinite alternate, brightness 3s infinite alternate";
+          }
+          const colors = [
+            "light-blue",
+            "flexa-purple",
+            "flexa-green",
+            "flexa-blue",
+          ];
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          star.classList.add(randomColor);
+          star.style.top = `${Math.random() * 100}vh`;
+          star.style.left = `${Math.random() * 100}vw`;
+          // Randomize twinkling animation delay
+          star.style.animationDelay = `${Math.random() * 5}s`;
+          starsContainer.appendChild(star);
+        }
+
+        // Generate more random stars
+        const numStars = 550;
+        for (let i = 0; i < numStars; i++) {
+          createStar();
+        }
+
+        // Adding click and hover functionality to sphere1
+        const sphere1 = document.querySelector(".sphere1");
+        sphere1.addEventListener("click", () => {
+          window.location.href = "https://example.com"; // Redirect to example.com
+        });
+
+        sphere1.addEventListener("mouseenter", () => {
+          const info = document.createElement("div");
+          info.textContent = "I"; // Display "I" for information
+          info.style.color = "white";
+          info.style.position = "absolute";
+          info.style.top = "50%";
+          info.style.left = "50%";
+          info.style.transform = "translate(-50%, -50%)";
+          sphere1.appendChild(info);
+        });
+
+        sphere1.addEventListener("mouseleave", () => {
+          const info = sphere1.querySelector("div");
+          if (info) {
+            info.remove(); // Remove the "I" when not hovering
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
