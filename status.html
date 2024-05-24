@@ -33,7 +33,7 @@
         font-size: 24px;
         border-radius: 5px; /* Add border-radius for rounded corners */
         position: relative;
-        cursor: pointer;
+        cursor: normal;
       }
       .cluster-popup {
         display: none;
@@ -94,7 +94,7 @@
             color: gray;
           }
           50% {
-            color: #ff414b;
+            color: #000000;
           }
           100% {
             color: gray;
@@ -227,9 +227,8 @@
         <p class="dark:text-[#848482] text-[#000000] inline-block">Offline</p>
       </div>
     </div>
-
     <!-- Cluster Grid -->
-    <div class="ml-7">
+    <div class="ml-10">
       <div class="ml-20">
         <div class="ml-20">
           <div class="justify-center ml-20 items-center">
@@ -272,6 +271,46 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        const fetchClusterData = async () => {
+          try {
+            const response = await fetch(
+              "/.netlify/functions/getClusterStatus"
+            );
+            const clusters = await response.json();
+
+            clusters.forEach((cluster) => {
+              const clusterElement = document.querySelector(
+                `[data-cluster="${cluster.clusterId}"]`
+              );
+
+              if (clusterElement) {
+                clusterElement.style.color = cluster.color;
+
+                const popup = clusterElement.querySelector(".cluster-popup");
+                if (popup) {
+                  popup.querySelector(
+                    ".shards"
+                  ).textContent = `Shards: ${cluster.shards}`;
+                  popup.querySelector(
+                    ".problems"
+                  ).textContent = `${cluster.problems} Shard(s) unavailable`;
+                  popup.querySelector(".uptime").textContent = cluster.uptime;
+                }
+              }
+            });
+          } catch (err) {
+            console.error("Failed to fetch cluster data", err);
+          }
+        };
+
+        fetchClusterData();
+
+        // Your existing code for uptime update and popup toggle...
+      });
+    </script>
+
     <!-- End Cluster Grid -->
 
     <div class="">
