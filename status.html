@@ -185,7 +185,7 @@
           >6/6 clusters have problems</p2
         ><br />
         <p2 class="text-[15px] text-black dark:text-white"
-          >Cluster Uptime: Offline</p2
+          >Cluster Uptime: <span id="uptime-0"></span></p2
         ><br />
         <!-- <span id="uptime-0"></span> -->
         <p2 class="text-[30px] text-black dark:text-white"
@@ -234,7 +234,7 @@
           <div class="justify-center ml-20 items-center">
             <div class="cluster-grid">
               <div
-                class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+                class="cluster-grid-item dark:text-[#01e6ce] text-[#01e6ce]"
                 data-cluster="0">
                 0
                 <div class="cluster-popup" id="popup-0">
@@ -374,7 +374,7 @@
     <script src="scripts/server.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", async function () {
-        const startDate = new Date("2024-05-16T01:00:00Z");
+        const startDate = new Date("2024-06-04T01:00:00Z");
 
         // Fetch cluster data from the backend
         const fetchClusterData = async () => {
