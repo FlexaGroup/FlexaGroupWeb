@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexa Group</title>
+    <meta
+      name="description"
+      content="Flexa Group | The all in one bot that empowers communities" />
+    <meta name="author" content="Flexa Group - Careers" />
+    <meta property="og:image" content="./images/Flexa_Logo.png" />
+    <link rel="icon" type="image/x-icon" href="./images/Flexa_Logo.png" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://flexastatus.statuspage.io/embed/script.js"></script>
+
+  <body>
+    <!-- <div> -->
+    <!-- class="flex items-center justify-center flex-wrap gap-4 bg-[#D70040] w-full mb-5 text-white font-bold text-center p-4">
+      <img src="images/Warnings/highwarning.svg" class="w-18 h-11 mr-4" />
+      <p>
+        <span style="font-size: large"
+          >We are experiencing minor issues at this moment in time main services
+          are not affected.</span
+        >
+        <br />
+        <span style="font-size: medium"
+          >This affects the status page and our main bot.</span
+        >
+      </p>
+      <img src="images/Warnings/highwarning.svg" class="w-18 h-11" /> -->
+    <!-- <a
+        href="https://status.flexagroup.co.uk"
+        target="_blank"
+        rel="noopener noreferrer">
+         <button
+          class="rounded-md border border-white-600 px-5 py-2 text-sm font-medium hover:bg-white hover:text-black">
+          Status Page
+        </button>
+      </a> -->
+    <!-- </div> -->
+
+    <div class="flex items-center justify-between gap-4 px-5 mt-4">
+      <a href="home.html">
+        <div class="flex items-center gap-4">
+          <img
+            src="./images/Flexa_Logo.png"
+            alt="Flexa Group Logo"
+            class="h-10" />
+          <p class="text-lg">Flexa Group</p>
+        </div>
+      </a>
+      <style>
+        @keyframes flash {
+          0% {
+            color: gray;
+          }
+          50% {
+            color: #01e6ce;
+          }
+          100% {
+            color: gray;
+          }
+        }
+
+        /* Apply the animation to the .flash-status class */
+        .flash-status a {
+          animation: flash 1s infinite;
+        }
+      </style>  <audio id="alert-sound" src="./scripts/alert.mp3" preload="auto"></audio>
+    <script src="scripts/alert.js"></script>
+    <script src="scripts/server.js"></script>
+
+      <div class="flex flex-wrap items-center gap-4 text-lg">
+        <div
+          class="nav-links duration-500 md:static fixed md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 z-50 backdrop-blur">
+          <ul
+            class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-4">
+            <li><a class="hover:text-gray-500" href="./home.html">Home</a></li>
+            <li>
+              <a class="hover:text-gray-500" href="./careers.html">Careers</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./maintenance.html">Store</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./blogs.html">Blogs</a>
+            </li>
+            <li class="flash-status">
+              <a class="hover:text-gray-500" href="./status.html">Status</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./tech mode.html"
+                >Tech Mode</a
+              >
+            </li>
+            <!-- Light/Dark Mode Toggle -->
+            <button
+              id="theme-toggle"
+              type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </ul>
+        </div>
+        <div class="flex items-center gap-6">
+          <ion-icon
+            onclick="onToggleMenu(this)"
+            name="menu"
+            class="text-3xl cursor-pointer md:hidden"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <script>
+      const navLinks = document.querySelector(".nav-links");
+      function onToggleMenu(e) {
+        e.name = e.name === "menu" ? "close" : "menu";
+        navLinks.classList.toggle("top-[9%]");
+      }
+    </script>
+
+    <div class="error-container">
+      <p class="error-message" id="errorMessage"></p>
+    </div>
+
+    <h1
+      class="text-center text-[#0041a5] dark:text-[#5267ff] font-[1000] text-[30px] mb-3">
+      Solar Project Appeals
+    </h1>
+    <p class="text-center text font-[500] text-[20px] mb-3">
+      Use the forms below to appeal your ban. These forms close on 01/08/2024.
+      <br>
+      If you have a question about your appeal, join our <a href="https://discord.gg/tF8ygMTK" class="TEXT-DECORATION: underline">Discord</a>.
+    </p>
+
+    <div class="mt">
+      <div
+        class="grid items-center gap-4 grid-cols-[repeat(auto-fit,_100%)] mt-5 sm:grid-cols-[repeat(auto-fit,_45%)] md:grid-cols-[repeat(auto-fit,_30.333333%)] justify-center">
+        <div class="bg-[#2d3e4d] dark:bg-[#1e1e1e] px-8 py-3 rounded-md">
+          <h1 class="text-[#f53535] dark:text-[#ff8456] font-bold text-xl mb-1">
+            Appeal Service
+          </h1>
+          <p class="text-md text-[#f53535] dark:text-[#ff8456] my-2">
+            This form consists of an appeal for Solar Projects.
+          </p>
+          <button
+            id="applyButton"
+            onclick="togglePopup()"
+            class="buttonapply text-sm rounded-md border border-[#ff8456] dark:border-[#f53535] py-1.5 px-5 transition-colors duration-500 text-[#f53535] dark:text-[#ff8456]">
+            Appeal Now
+          </button>
+        </div>
+      </div>
+
+      <script>
+        var deadlineReached = false; // Flag to track if deadline is reached
+    
+        function togglePopup() {
+          if (deadlineReached) return; // If deadline already reached, exit function
+    
+          var deadline = new Date("2024-08-01T00:00:00"); // Set your deadline date and time here
+          var currentTime = new Date().getTime();
+    
+          if (currentTime > deadline) {
+            deadlineReached = true; // Set flag to true indicating deadline is reached
+            var applyButton = document.getElementById('applyButton');
+            applyButton.disabled = true; // Disable the button
+            applyButton.innerText = 'Ban Appeals Closed'; // Change button text
+            applyButton.style.borderColor = '#666666'; // Change border color
+            applyButton.style.color = '#666666'; // Change text color
+            applyButton.style.cursor = 'not-allowed'; // Change cursor
+          }
+        }
+    
+        // Call togglePopup initially to check the deadline on page load
+        togglePopup();
+    
+        // Refresh the page at 21:20:00 UK time on May 13, 2024
+        var refreshTime = new Date("2024-08-01T00:00:00").getTime();
+        var currentTime = new Date().getTime();
+    
+        if (currentTime < refreshTime) {
+          var timeToRefresh = refreshTime - currentTime;
+          setTimeout(function() {
+            location.reload();
+          }, timeToRefresh);
+        }
+      </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js-eu1.hs-scripts.com/144091263.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    <div
+      class="hidden popup fixed z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4"
+      id="popup">
+      <div
+        class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+        <span class="hidden sm:inline-block sm:align-top sm:h-screen"
+          >&#8203;</span
+        >
+
+        <div
+          class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-5xl w-full sm:p-6 dark:bg-gray-900">
+          <div>
+            <h class="text-3xl text-center">Solar Projects Appeal Services</h>
+            <br>
+            <h1>This appeal form closes on XX/XX/XXXX at XX:XX</h1>
+            <p>The star symbol * means required.</p>
+            <form
+              class="my-3 gap-2 flex flex-col justify-center"
+              id="marketingForm">
+              <div>
+                <label for="modalName" class="block text-sm text-gray-500">
+                  Name*
+                </label>
+
+                <input
+                  type="text"
+                  id="modalName"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  class="block mt-2 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 dark:placeholder-gray-500 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none" />
+              </div>
+
+              <div>
+                <label for="modalEmail" class="block text-sm text-gray-500">
+                  Email*
+                </label>
+
+                <input
+                  type="email"
+                  id="modalEmail"
+                  name="email"
+                  required
+                  placeholder="johndoe@gmail.com"
+                  class="block mt-2 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 dark:placeholder-gray-500 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none" />
+              </div>
+
+              <div>
+                <label for="availability" class="block text-sm text-gray-500">
+                  Discord or Roblox Appeal. And why you should be unbanned.*
+                </label>
+
+                <input
+                  type="text"
+                  id="availability"
+                  name="availability"
+                  required
+                  placeholder="Roblox. Because I dont do what I do anymore and I think I am good to come back."
+                  class="block mt-2 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 dark:placeholder-gray-500 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none" />
+              </div>
+
+              <div>
+                <label for="discordid" class="block text-sm text-gray-500">
+                  Discord ID/Username or Roblox ID/Username*
+                </label>
+
+                <input
+                  type="text"
+                  id="discordid"
+                  name="discordid"
+                  required
+                  placeholder="CJayStreamz 972599697229365278"
+                  class="block mt-2 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 dark:placeholder-gray-500 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none" />
+              </div>
+
+              <div>
+                <label for="reason" class="block text-sm text-gray-500">
+                  Why do you think we should allow you back in Solar Projects*
+                </label>
+
+                <textarea
+                  id="reason"
+                  name="reason"
+                  required
+                  placeholder="I think I should be allowed back because I learnt from my mistake."
+                  class="block mt-2 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 dark:placeholder-gray-500 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-4 h-32 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none"></textarea>
+              </div>
+
+              <div>
+                <label for="reason1" class="block text-sm text-gray-500">
+                  Help us understand why we can trust you back*
+                </label>
+
+                <textarea
+                  id="reason1"
+                  name="reason1"
+                  required
+                  placeholder="I learnt what I did was wrong and I wont do it again."
+                  class="block mt-2 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 dark:placeholder-gray-500 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-4 h-32 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none"></textarea>
+              </div>
+            </form>
+          </div>
+
+          <div class="flex items-center justify-end gap-2">
+            <button
+              class="w-full px-4 py-2 mt-4 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:w-auto hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+              onclick="togglePopup()">
+              Cancel
+            </button>
+            <button
+              onclick="submitMarketingForm()"
+              type="button"
+              class="w-full px-4 py-2 mt-4 text-sm sm:w-auto font-medium rounded-md border border-[#0041a5] dark:border-[#5267ff] hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]">
+              Send Appeal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-8">
+      <div
+        class="flex flex-col mt-1 flex-wrap gap-2 p-5 items-center justify-center text-center text-[#0041a5] dark:text-[#5267ff] text-sm">
+        <div
+          class="flex gap-4 mt-1 items-center justify-center flex-wrap transition-opacity duration-500 opacity-0"
+          id="footer">
+          <p>
+            Flexa Bot: Empowering Communities | Copyright 2024 © Flexa Group. All
+            rights reserved. <a href="sitemap.html">Site map</a>
+          </p>
+
+          <a
+            href="https://www.instagram.com/flexagroupofficial/"
+            target="_blank">
+            <img src="./images/instalogo.png" width="20px" />
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-10 items-center justify-center">
+          <a href="./policies/termsofservice.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/termsofservice.html'">
+              Terms of Service
+            </button>
+          </a>
+          <a href="./policies/privacy.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/privacy.html'">
+              Privacy Policy
+            </button>
+          </a>
+          <a href="./policies/cookies.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Cookie Policy
+            </button>
+          </a>
+          <a href="./policies/support.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Support Policy
+            </button>
+          </a>
+          <a href="./policies/payment.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Payments Policy
+            </button>
+                <!-- End Footer -->  
+
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/spappealsig.js"></script>
+    <script src="scripts/spappealsdisc.js"></script>
+    <script src="careersPage.js"></script>
+
+</html>

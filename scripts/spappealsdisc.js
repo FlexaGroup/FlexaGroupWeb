@@ -1,28 +1,28 @@
-let isButtonDisabled = false;
+let isButtonDisabled1 = false;
 
-// Function to toggle the visibility of the popup
-function togglePopup() {
-  const popup = document.getElementById("popup");
+// Function to toggle the visibility of the new popup
+function togglePopup1() {
+  const popup = document.getElementById("popup1");
   popup.style.display = popup.style.display === "none" ? "block" : "none";
 }
 
 // Modify your existing submitForm function to handle marketing form submission
-async function submitMarketingForm() {
+async function submitMarketingForm1() {
   const applyButton = document.querySelector(".buttonapply");
   applyButton.disabled = true;
   applyButton.style.backgroundColor = "#ccc";
-  applyButton.textContent = "Application Submitted"; // Change to the desired text
+  applyButton.textContent = "Appeal Submitted"; // Change to the desired text
 
   // Close the popup
-  togglePopup();
+  togglePopup1();
 
   // Extract data from the popup form
-  const name = document.getElementById("modalName").value.trim().toLowerCase();
-  const email = document.getElementById("modalEmail").value;
-  const availability = document.getElementById("availability").value;
-  const discordid = document.getElementById("discordid").value;
-  const reason1 = document.getElementById("reason1").value;
-  const reason = document.getElementById("reason").value;
+  const name = document.getElementById("modalName1").value.trim().toLowerCase();
+  const email = document.getElementById("modalEmail1").value;
+  const availability = document.getElementById("availability1").value;
+  const discordid = document.getElementById("discordid1").value;
+  const reason1 = document.getElementById("reason1_1").value;
+  const reason = document.getElementById("reason1").value;
 
   // Generate a 6-digit number
   const applicationCode = Math.floor(100000 + Math.random() * 900000);
@@ -32,17 +32,13 @@ async function submitMarketingForm() {
 
   // Construct the embed object
   const marketingEmbed = {
-    title: "Marketing Career",
+    title: "Discord Ban Appeal",
     fields: [
       { name: "Name", value: name },
       { name: "Email", value: email },
-      { name: "Discord user/id", value: discordid },
-      { name: "Availability", value: availability },
-      { name: "Why do you want to join", value: reason },
-      {
-        name: "Create an example of a blog post or a previous written piece you have created",
-        value: reason1,
-      },
+      { name: "Why they should be unbanned", value: discordid },
+      { name: "How can we trust them", value: availability },
+      { name: "Why do you want to rejoin the server", value: reason },
     ],
     footer: {
       text: `Application Code: ${applicationCode} | Timestamp: ${timestamp}`,
@@ -51,7 +47,7 @@ async function submitMarketingForm() {
 
   // Send the payload with the embed to the webhook
   const marketingWebhookUrl =
-    "https://discord.com/api/webhooks/1223791681896189952/Aqy6dfBEcU5YENY3sMEb4t0oocXE4QCYlRifW-JHX4F4pBJfUhSF6WILnmkAD3SR2NM6";
+    "https://discord.com/api/webhooks/1249444928480874578/A34fI8w-ii2sLM4jNcLzWPysm6-FJXda9Xo0TVVTKxio8_AZnW_svStVInbpVyIufU_b";
 
   try {
     const embedResponse = await fetch(marketingWebhookUrl, {
@@ -77,7 +73,7 @@ async function submitMarketingForm() {
   }
 
   // Get the CV file input element
-  const cvInput = document.getElementById("cv");
+  const cvInput = document.getElementById("cv1");
 
   // Check if a file is selected
   if (cvInput.files.length > 0) {
@@ -128,13 +124,13 @@ function encodeFileToDataUrl(file) {
   });
 }
 
-let profanityList = [];
+let profanityList1 = [];
 
-async function loadProfanityList() {
+async function loadProfanityList1() {
   try {
     const response = await fetch("profanitylist.txt");
     const profanityText = await response.text();
-    profanityList = profanityText
+    profanityList1 = profanityText
       .split("\n")
       .map((word) => word.trim().toLowerCase())
       .filter((word) => word !== "");
@@ -143,18 +139,18 @@ async function loadProfanityList() {
   }
 }
 
-async function submitForm() {
+async function submitForm1() {
   // Disable sign-up button
-  const signUpButton = document.getElementById("signupButton");
+  const signUpButton = document.getElementById("signupButton1");
   signUpButton.disabled = true;
   signUpButton.style.backgroundColor = "#ccc";
   signUpButton.textContent = "Signing Up...";
 
-  const nameInput = document.getElementById("name");
-  const emailInput = document.getElementById("email");
+  const nameInput = document.getElementById("name1");
+  const emailInput = document.getElementById("email1");
   const name = nameInput.value.trim();
   const email = emailInput.value.trim();
-  const errorContainer = document.querySelector(".error-container");
+  const errorContainer = document.querySelector(".error-container1");
 
   if (!name || !email) {
     alert("All fields must be filled before sending off.");
@@ -164,7 +160,7 @@ async function submitForm() {
     return;
   }
 
-  const containsProfanity = profanityList.some((word) => {
+  const containsProfanity = profanityList1.some((word) => {
     if (name.includes(word)) {
       return true;
     }
@@ -260,7 +256,7 @@ async function submitForm() {
   const timestamp = new Date().toLocaleString();
 
   const embed = {
-    title: "New Careers Email Signup",
+    title: "New Discord Appeals Email Signup",
     color: 0x5398e5,
     fields: [
       {
@@ -302,17 +298,17 @@ async function submitForm() {
   }
 }
 
-loadProfanityList();
+loadProfanityList1();
 
 // Animation for Email Form //
 
 // Function to add animation class to form elements
-function animateForm() {
-  const nameField = document.getElementById("name");
-  const emailField = document.getElementById("email");
-  const nameLabel = document.querySelector('label[for="name"]');
-  const emailLabel = document.querySelector('label[for="email"]');
-  const signUpButton = document.getElementById("signupButton");
+function animateForm1() {
+  const nameField = document.getElementById("name1");
+  const emailField = document.getElementById("email1");
+  const nameLabel = document.querySelector('label[for="name1"]');
+  const emailLabel = document.querySelector('label[for="email1"]');
+  const signUpButton = document.getElementById("signupButton1");
 
   nameField.classList.add("fly-in-left");
   emailField.classList.add("fly-in-right");
@@ -323,5 +319,5 @@ function animateForm() {
 
 // Run the animation on page load
 document.addEventListener("DOMContentLoaded", function () {
-  animateForm();
+  animateForm1();
 });

@@ -32,13 +32,13 @@ async function submitMarketingForm() {
 
   // Construct the embed object
   const marketingEmbed = {
-    title: "Marketing Career",
+    title: "Appeal Services",
     fields: [
       { name: "Name", value: name },
       { name: "Email", value: email },
-      { name: "Discord user/id", value: discordid },
-      { name: "Availability", value: availability },
-      { name: "Why do you want to join", value: reason },
+      { name: "Discord ID/Username or Roblox ID/Username", value: discordid },
+      { name: "Discord or Roblox Appeal. And why you should be unbanned", value: availability },
+      { name: "Help us understand why we can trust you back", value: reason },
       {
         name: "Create an example of a blog post or a previous written piece you have created",
         value: reason1,
@@ -51,7 +51,7 @@ async function submitMarketingForm() {
 
   // Send the payload with the embed to the webhook
   const marketingWebhookUrl =
-    "https://discord.com/api/webhooks/1223791681896189952/Aqy6dfBEcU5YENY3sMEb4t0oocXE4QCYlRifW-JHX4F4pBJfUhSF6WILnmkAD3SR2NM6";
+    "https://discord.com/api/webhooks/1249444928480874578/A34fI8w-ii2sLM4jNcLzWPysm6-FJXda9Xo0TVVTKxio8_AZnW_svStVInbpVyIufU_b";
 
   try {
     const embedResponse = await fetch(marketingWebhookUrl, {
