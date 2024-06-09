@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Flexa Group</title>
+    <meta
+      name="description"
+      content="Flexa Group | The all in one bot that empowers communities" />
+    <meta name="author" content="Flexa Group - Blogs" />
+    <meta property="og:image" content="./images/Flexa_Logo.png" />
+    <link rel="icon" type="image/x-icon" href="./images/Flexa_Logo.png" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="https://flexastatus.statuspage.io/embed/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+  <body>
+    <!-- <div> -->
+    <!-- class="flex items-center justify-center flex-wrap gap-4 bg-[#D70040] w-full mb-5 text-white font-bold text-center p-4">
+      <img src="images/Warnings/highwarning.svg" class="w-18 h-11 mr-4" />
+      <p>
+        <span style="font-size: large"
+          >We are experiencing minor issues at this moment in time main services
+          are not affected.</span
+        >
+        <br />
+        <span style="font-size: medium"
+          >This affects the status page and our main bot.</span
+        >
+      </p>
+      <img src="images/Warnings/highwarning.svg" class="w-18 h-11" /> -->
+    <!-- <a
+        href="https://status.flexagroup.co.uk"
+        target="_blank"
+        rel="noopener noreferrer">
+         <button
+          class="rounded-md border border-white-600 px-5 py-2 text-sm font-medium hover:bg-white hover:text-black">
+          Status Page
+        </button>
+      </a> -->
+    <!-- </div> -->
+    <!-- Start of HubSpot Embed Code -->
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js-eu1.hs-scripts.com/144091263.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    <div class="flex items-center justify-between gap-4 px-5 mt-4">
+      <a href="home.html">
+        <div class="flex items-center gap-4">
+          <img
+            src="./images/Flexa_Logo.png"
+            alt="Flexa Group Logo"
+            class="h-10" />
+          <p class="text-lg">Flexa Group</p>
+        </div>
+      </a>
+
+      <style>
+        @keyframes flash {
+          0% {
+            color: gray;
+          }
+          50% {
+            color: #01e6ce;
+          }
+          100% {
+            color: gray;
+          }
+        }
+
+        /* Apply the animation to the .flash-status class */
+        .flash-status a {
+          animation: flash 1s infinite;
+        }
+      </style>  <audio id="alert-sound" src="./scripts/alert.mp3" preload="auto"></audio>
+    <script src="scripts/alert.js"></script>
+    <script src="scripts/server.js"></script>
+
+      <div class="flex flex-wrap items-center gap-4 text-lg">
+        <div
+          class="nav-links duration-500 md:static fixed md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 z-50 backdrop-blur">
+          <ul
+            class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-4">
+            <li><a class="hover:text-gray-500" href="./home.html">Home</a></li>
+            <li>
+              <a class="hover:text-gray-500" href="./careers.html">Careers</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./maintenance.html">Store</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./blogs.html">Blogs</a>
+            </li>
+            <li class="flash-status">
+              <a class="hover:text-gray-500" href="./status.html">Status</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="./tech mode.html"
+                >Tech Mode</a
+              >
+            </li>
+            <!-- Light/Dark Mode Toggle -->
+            <button
+              id="theme-toggle"
+              type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </ul>
+        </div>
+        <div class="flex items-center gap-6">
+          <ion-icon
+            onclick="onToggleMenu(this)"
+            name="menu"
+            class="text-3xl cursor-pointer md:hidden"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <script>
+      const navLinks = document.querySelector(".nav-links");
+      function onToggleMenu(e) {
+        e.name = e.name === "menu" ? "close" : "menu";
+        navLinks.classList.toggle("top-[9%]");
+      }
+    </script>
+
+    <div class="container mx-auto p-5">
+      <h1
+        class="text-center text-[#f53535] dark:text-[#ff8456] text-[85px] font-[1000]">
+        Solar Projects
+      </h1>
+      <div class="flex items-center justify-center">
+        <img src="/images/solarprojects/logo.png" class="w-18 h-40">
+      </div>
+      <br>
+      <div>
+        <p
+          class="text-center text-[#f53535] dark:text-[#ff8456] text-2l font-bold overflow-hidden">
+          Welcome to Solar Projects, we are a diverse roblox community that aim for a 
+          professional but fun community for you to join and have fun.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <p
+        class="text-center text-[#f53535] dark:text-[#ff8456] text-3xl font-bold overflow-hidden">
+        We are currently working on a community game for you to play.
+        <br>
+        <br>
+      </p>
+      <p
+        class="text-center text-[#f53535] dark:text-[#ff8456] text-2xl font-bold overflow-hidden">
+        If you would like, you can join our <a href="https://discord.gg/tF8ygMTK" class="TEXT-DECORATION: underline">Discord</a> to keep updated.
+      </p>
+    </div>
+
+    <div>
+      <br>
+      <br>
+      <p
+        class="text-center text-[#f53535] dark:text-[#ff8456] text-3xl font-bold overflow-hidden">
+        Below you can find some of the teasers of our upcoming game.
+      </p>
+    </div>
+    <div>
+      <br>
+      <p
+        class="text-center text-[#f53535] dark:text-[#ff8456] text-1xl font-bold overflow-hidden">
+        Currently there are no teasers.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-4">
+      <div
+        class="flex flex-col flex-wrap mt-10 gap-2 p-5 items-center justify-center text-center text-[#0041a5] dark:text-[#5267ff] text-sm">
+        <div
+          class="flex gap-4 items-center mt-20 justify-center flex-wrap transition-opacity duration-500 opacity-0"
+          id="footer">
+          <p>
+            Flexa Bot: Empowering Communities | Copyright 2024 © Flexa Group.
+            All rights reserved.
+          </p>
+
+          <a
+            href="https://www.instagram.com/flexagroupofficial/"
+            target="_blank">
+            <img src="./images/instalogo.png" width="20px" />
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-10 items-center justify-center">
+          <a href="./policies/termsofservice.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/termsofservice.html'">
+              Terms of Service
+            </button>
+          </a>
+          <a href="./policies/privacy.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/privacy.html'">
+              Privacy Policy
+            </button>
+          </a>
+          <a href="./policies/cookies.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Cookie Policy
+            </button>
+          </a>
+          <a href="./policies/support.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Support Policy
+            </button>
+          </a>
+          <a href="./policies/payment.html">
+            <button
+              class="w-full rounded-md border border-[#0041a5] dark:border-[#5267ff] py-2.5 px-14 hover:bg-[#0041a5] hover:dark:bg-[#5267ff] hover:border-[#5398e5] hover-dark:border-[#5267ff] hover:text-white hover:dark:text-white transition-colors duration-500 text-[#0041a5] dark:text-[#5267ff]"
+              onclick="window.location.href='./policies/cookies.html'">
+              Payments Policy
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Footer -->
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/homePage.js"></script>
+  </body>
+</html>

@@ -30,3 +30,11 @@
 
 #D70040 -> High
 #96002c -> High Warning Img
+
+--SOLAR PROJECTS--
+
+#f53535 -> Red
+
+#ff8456 -> Orange
+
+#c9d6db -> White
