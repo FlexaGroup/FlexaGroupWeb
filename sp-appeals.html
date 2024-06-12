@@ -179,7 +179,7 @@
         function togglePopup() {
           if (deadlineReached) return; // If deadline already reached, exit function
     
-          var deadline = new Date("2024-08-01T00:00:00"); // Set your deadline date and time here
+          var deadline = new Date("2024-08-01T00:00:10");
           var currentTime = new Date().getTime();
     
           if (currentTime > deadline) {
@@ -195,17 +195,6 @@
     
         // Call togglePopup initially to check the deadline on page load
         togglePopup();
-    
-        // Refresh the page at 21:20:00 UK time on May 13, 2024
-        var refreshTime = new Date("2024-08-01T00:00:00").getTime();
-        var currentTime = new Date().getTime();
-    
-        if (currentTime < refreshTime) {
-          var timeToRefresh = refreshTime - currentTime;
-          setTimeout(function() {
-            location.reload();
-          }, timeToRefresh);
-        }
       </script>
 
     <!-- Start of HubSpot Embed Code -->
