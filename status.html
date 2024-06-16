@@ -61,19 +61,10 @@
         color: #01e6ce; /* Change color for cluster 1 */
       }
       .cluster-grid-item[data-cluster="1"] {
-        color: #000000; /* Change color for cluster 1 */
+        color: #01e6ce; /* Change color for cluster 1 */
       }
       .cluster-grid-item[data-cluster="2"] {
-        color: #000000; /* Change color for cluster 1 */
-      }
-      .cluster-grid-item[data-cluster="3"] {
-        color: #000000; /* Change color for cluster 1 */
-      }
-      .cluster-grid-item[data-cluster="4"] {
-        color: #000000; /* Change color for cluster 1 */
-      }
-      .cluster-grid-item[data-cluster="5"] {
-        color: #000000; /* Change color for cluster 1 */
+        color: #01e6ce; /* Change color for cluster 1 */
       }
     </style>
   </head>
@@ -174,18 +165,18 @@
         class="text-center text-[#0041a5] dark:text-[#5267ff] text-[75px] font-[1000]">
         Flexa Status
       </h1>
-      <h1
+      <!-- <h1
         class="text-center dark:text-[#848482] text-[#000000] text-[35px] font-[1000]">
         Sharding currently offline
-      </h1>
+      </h1> -->
       <div>
         <p1 class="text-[25px] text-black dark:text-white">90/90 shards</p1
         ><br />
         <p2 class="text-[15px] text-black dark:text-white"
-          >3/3 clusters have problems</p2
+          >0/3 clusters have problems</p2
         ><br />
         <p2 class="text-[15px] text-black dark:text-white"
-          >Cluster Uptime: Offline</p2
+          >Cluster Uptime: <span id="uptime-0"></span></p2
         ><br />
         <!-- <span id="uptime-0"></span> -->
         <p2 class="text-[30px] text-black dark:text-white"
@@ -234,7 +225,7 @@
           <div class="justify-center ml-20 items-center">
             <div class="cluster-grid">
               <div
-                class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+                class="cluster-grid-item dark:text-[#01e6ce] text-[#01e6ce]"
                 data-cluster="0">
                 0
                 <div class="cluster-popup" id="popup-0">
@@ -245,7 +236,7 @@
                 </div>
               </div>
               <div
-                class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+                class="cluster-grid-item dark:text-[#01e6ce] text-[#01e6ce]"
                 data-cluster="1">
                 1
                 <div class="cluster-popup" id="popup-1">
@@ -256,7 +247,7 @@
                 </div>
               </div>
               <div
-                class="cluster-grid-item dark:text-[#848482] text-[#000000]"
+                class="cluster-grid-item dark:text-[#01e6ce] text-[#01e6ce]"
                 data-cluster="2">
                 2
                 <div class="cluster-popup" id="popup-2">
